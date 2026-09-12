@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 25rem;
+
+  --color-korra-green: #2b4637;
+  --color-deep-green: #1e3226;
+
+  --color-warm-white: #faf6ee;
+  --color-warm-cream: #f1e9d7;
+  --color-soft-cream: #fcfaf5;
+
+  --color-ink: #231f1b;
+  --color-restrained-blue: #3f4e58;
+
+  --color-terracotta: #b5652f;
+  --color-amber: #c38a3d;
+  --color-stone: #e4dccb;
+  --color-error: #c24a3a;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+nav ul li:hover {
+  color: black;
+  cursor: pointer;
+}
+.Hero {
+  background-image:
+    linear-gradient(rgba(100, 100, 100, 0.3), rgba(100, 100, 100, 0.3)),
+    url(assets/duck.jpeg);
+  animation: heroEnter 1000ms ease-in-out forwards;
+}
+
+.exploreCard:hover img {
+  scale: 1.1;
+}
+.exploreCard:hover h3 {
+  font-weight: bolder;
+  color: var(--color-ink);
+  background-color: var(--color-terracotta);
+}
+.exploreCard h3 {
+  background-color: var(--color-ink);
+}
+.exploreCard:hover .inset-0 {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.foodCard {
+  transition: transform 0.3s ease-in-out;
+  /* overflow: hidden;   */
+  width: 100%;
+}
+.foodCard:hover img {
+  transform: scale(1.1);
+  /* overflow: hidden; */
+}
+.foodCard h3 {
+  font-family: var(--font-display);
+}
+.foodCard p {
+  font-family: var(--font-body);
+}
+
+.foodCard .description {
+  color: color-mix(in srgb, var(--color-ink) 75%, transparent);
+}
+
+.foodCard .price {
+  color: var(--color-terracotta);
+}
+.foodCat {
+  gap: 40px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  position: relative;
+  padding: 0.8rem;
+}
+
+.foodCat button {
+  color: var(--color-ink);
+  opacity: 0.6;
+}
+
+.foodCat button.active {
+  opacity: 1;
+  position: relative;
+}
+.foodCat button.active::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0.5px;
+  left: 0px;
+  background-color: var(--color-terracotta);
+}
+#form {
+  padding-inline: 1rem;
+  margin: auto auto;
+  width: 99%;
+}
+#form label {
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: whitesmoke;
+  gap: 6px;
+}
+#form label input,
+#form label textarea {
+  padding: 1px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+
+  color: whitesmoke;
+  font-family: var(--font-body);
+  font-size: 16px;
+
+  transition: border-bottom 200ms ease;
+}
+#form label textarea {
+  resize: none;
+}
+#form label input:focus,
+#form label textarea:focus {
+  border-bottom: 2px solid white;
+}
+#form label input::placeholder,
+#form label textarea::placeholder {
+  opacity: 0.5;
+}
+#form #guests::-webkit-inner-spin-button {
+  display: none;
+}
+.Reservation {
+  background-image:
+    linear-gradient(rgba(43, 70, 55, 0.6), rgba(43, 70, 55, 0.6)),
+    url("assets/duck.jpeg");
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+}
+@keyframes heroEnter {
+  from {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
