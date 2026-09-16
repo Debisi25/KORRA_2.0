@@ -1,18 +1,39 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import korraWhite from "../assets/korra_white.jpeg";
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, SetScrolled] = useState(false);
+  const [activePage, setActivePage] = useState("");
+
+  function handlePage() {
+    setActivePage();
+  }
+  useEffect(() => {
+    function handleScroll() {
+      SetScrolled(window.scrollY > 20);
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
-      <nav className="isolate flex flex-row justify-between items-center p-4 bg-gray-800 text-white sticky top-0 z-50">
-        <Link to="/" className="font-display text-2xl">
+      <nav
+        className={`isolate flex flex-row justify-between items-center p-4 text-ink sticky top-0 border z-50 transition-all duration-300 ease-out ${
+          scrolled
+            ? "scrolled backdrop-blur-md border-white/12"
+            : "scrolled border-transparent text-white"
+        } `}
+      >
+        <Link to="/" className="-rotate-180 font-display text-2xl">
           KORRA
         </Link>
         <ul className="justify-around p-3 hidden sm:flex">
-          <li className="px-4">
+          <li className="px-4 font-body font-4  ">
             <Link to="/">Home</Link>
           </li>
           <li className="px-4">
@@ -29,7 +50,7 @@ function NavBar() {
           </li>
         </ul>
         <button
-          className="font-body text-md text-white sm:hidden hover:text-black"
+          className={`font-body text-md  sm:hidden hover:text-black ${scrolled ? "text-terracotta" : "text-white"}`}
           onClick={() => setIsOpen(!isOpen)}
         >
           Menu

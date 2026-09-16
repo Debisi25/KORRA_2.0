@@ -8,7 +8,7 @@ function Button({ children, link, className }) {
     return (
       <Link to={link}>
         <button
-          className={`px-4 py-2 rounded-md font-body text-md ${className}`}
+          className={` button px-4 py-2 rounded-md font-body text-md ${className} text-white`}
         >
           {children}
         </button>

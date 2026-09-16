@@ -183,7 +183,7 @@ function Menu() {
   return (
     <main className="mt-5 px-4 md:px-8 max-w-360 mx-auto">
       <FoodCat
-        className="sticky top-0 z-60 bg-warm-white"
+        className="pt-4"
         categories={categories}
         activeCat={activeCat}
         onCatChange={setActiveCat}
