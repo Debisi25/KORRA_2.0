@@ -22,4 +22,12 @@ function Button({ children, link, className }) {
     );
   }
 }
+
+export function NavLink({ name, link, className }) {
+  return (
+    <li className={className}>
+      <Link to={link}>{name}</Link>
+    </li>
+  );
+}
 export default Button;

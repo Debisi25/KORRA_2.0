@@ -15,7 +15,10 @@ function FoodCard({ imgUrl, foodName, foodDescription, foodPrice, category }) {
       </div>
       <h3 className="foodName mt-2 text-md">{foodName}</h3>
       <p className="description text-sm">{foodDescription}</p>
-      <p className="price text-sm self-end ">${foodPrice}</p>
+      <div className="flex justify-between">
+        <p className="text-ink bg-terracotta p-0.5 rounded-sm">{category}</p>
+        <p className="price text-sm ">${foodPrice}</p>
+      </div>
     </div>
   );
 }

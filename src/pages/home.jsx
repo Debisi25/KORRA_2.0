@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import ExploreCard from "../components/exploreCard";
 import FoodCard from "../components/FoodCard";
+import Homecarousel from "../components/carousel";
 import Button from "../components/button";
 import Hero from "../components/Hero";
 import HomeStory from "../components/homeStory";
@@ -23,22 +24,16 @@ function Home() {
       link: "/menu",
     },
     {
+      id: "reservations",
+      title: "Reservations",
+      image: duckMeat,
+      link: "/reservations",
+    },
+    {
       id: "space",
       title: "Our Space",
       image: duckMeat,
       link: "/space",
-    },
-    {
-      id: "reservations",
-      title: "Reservations",
-      image: duckMeat,
-      link: "/reservations",
-    },
-    {
-      id: "reservations",
-      title: "Reservations",
-      image: duckMeat,
-      link: "/reservations",
     },
     {
       id: "home",
@@ -64,6 +59,7 @@ function Home() {
           ))}
         </div>
       </div>
+      <Homecarousel />
     </>
   );
 }

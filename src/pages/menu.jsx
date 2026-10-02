@@ -188,16 +188,25 @@ function Menu() {
         activeCat={activeCat}
         onCatChange={setActiveCat}
       />
-      <div className=" grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-[clamp(1rem,2vw,2rem)]">
-        {menuItems.map((item) => (
-          <FoodCard
-            key={item.id}
-            foodName={item.name}
-            foodDescription={item.description}
-            foodPrice={item.price}
-            imgUrl={item.image}
-            category={item.category}
-          />
+      <div className="mb-20">
+        {categories.map((cat) => (
+          <section key={cat} className={`${cat} text-2xl mt-10`}>
+            <h1 className="font-body text-terracotta mb-5">{cat}</h1>
+            <div className=" grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-[clamp(1rem,2vw,2rem)]">
+              {menuItems
+                .filter((item) => item.category === cat)
+                .map((item) => (
+                  <FoodCard
+                    key={item.id}
+                    foodName={item.name}
+                    foodDescription={item.description}
+                    foodPrice={item.price}
+                    imgUrl={item.image}
+                    category={item.category}
+                  />
+                ))}
+            </div>
+          </section>
         ))}
       </div>
     </main>
