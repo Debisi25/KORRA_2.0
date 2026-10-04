@@ -223,7 +223,7 @@ function Menu() {
             <button
               key={item.id}
               onClick={() => goToItem(item.id)}
-              className="flex w-full justify-between gap-2"
+              className="flex w-full justify-between gap-2 bg-blue-50 px-2 py-1 rounded-md hover:bg-blue-100 transition-all duration-200"
             >
               <h3>{item.name}</h3>
               <p>₦{item.price}</p>
