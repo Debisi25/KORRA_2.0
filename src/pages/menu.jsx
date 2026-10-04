@@ -2,7 +2,6 @@ import { useState } from "react";
 import FoodCat from "../components/FoodCategory";
 import FoodCard from "../components/FoodCard";
 import duckMeat from "../assets/duck.jpeg";
-import Search from "../assets/react.svg";
 
 const menuItems = [
   {
@@ -193,9 +192,9 @@ function Menu() {
       <div
         className={`flex flex-col gap-2 transition-all duration-300 sticky top-16 right-2 z-500 bg-white ${q ? "w-full" : "w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5"} items-center`}
       >
-        <div className="flex justify-between w-full">
+        <div className="flex justify-between w-full gap-2">
           <input
-            className={`w-full px-2 py-1 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
+            className={`w-full px-2 py-1 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-1.5 focus:ring-blue-500 focus:border-blue-500`}
             type="text"
             name=""
             id=""
@@ -237,7 +236,6 @@ function Menu() {
         categories={categories}
         activeCat={activeCat}
         onCatChange={setActiveCat}
-        SearchImg={Search}
       />
       <div className="mb-20">
         {categories.map((cat) => (

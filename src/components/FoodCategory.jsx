@@ -1,13 +1,6 @@
 import { useState } from "react";
 
-function FoodCat({
-  categories,
-  onCatChange,
-  activeCat,
-  className,
-  SearchImg,
-  search,
-}) {
+function FoodCat({ categories, onCatChange, activeCat, className }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="flex flex-col gap-7">
@@ -19,9 +12,6 @@ function FoodCat({
           className={`py-2 px-4 rounded-md font-body text-md text-black hover:text-terracotta font-extrabold hover:font-bold`}
         >
           MENU
-        </button>
-        <button className={`bg-white p-2`} onClick={search}>
-          <img src={SearchImg} alt="search" />
         </button>
       </div>
       {isOpen && (
