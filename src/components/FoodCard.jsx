@@ -1,10 +1,15 @@
-import React from "react";
-import { useState } from "react";
-
-function FoodCard({ imgUrl, foodName, foodDescription, foodPrice, category }) {
+function FoodCard({
+  imgUrl,
+  foodName,
+  foodDescription,
+  foodPrice,
+  category,
+  key,
+}) {
   return (
     <div
       className={`${category} foodCard w-full h-auto flex flex-col px-0.5 bg-soft-cream `}
+      id={key}
     >
       <div className="w-full aspect-square md:aspect-4/5 overflow-hidden mt-4">
         <img

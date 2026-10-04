@@ -1,20 +1,8 @@
-import React from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-
 import ExploreCard from "../components/exploreCard";
-import FoodCard from "../components/FoodCard";
 import Homecarousel from "../components/carousel";
-import Button from "../components/button";
 import Hero from "../components/Hero";
 import HomeStory from "../components/homeStory";
-import Form from "../components/reservation";
-import Reservation from "./Reservation";
 import duckMeat from "../assets/duck.jpeg";
-import vite from "../assets/vite.svg";
-import hero from "../assets/hero.png";
-import korra from "../assets/korra_white.jpeg";
-
 function Home() {
   const exploreCards = [
     {

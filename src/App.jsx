@@ -8,8 +8,6 @@ import Space from "./pages/space";
 
 import NavBar from "./components/navBar";
 import Footer from "./components/footer";
-import Button from "./components/button";
-import ExploreCard from "./components/exploreCard";
 
 function App() {
   return (

@@ -1,10 +1,8 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import korraWhite from "../assets/korra_white.jpeg";
 import { NavLink as ReactRouterNavLink } from "react-router-dom";
 
-function NavLink({ name, link, className }) {
+function NavLink({ name, link}) {
   return (
     <li className={`{className} relative `}>
       <ReactRouterNavLink
@@ -27,11 +25,7 @@ function NavBar() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, SetScrolled] = useState(false);
-  const [activePage, setActivePage] = useState("");
 
-  function handlePage() {
-    setActivePage();
-  }
   useEffect(() => {
     function handleScroll() {
       SetScrolled(window.scrollY > 20);
@@ -59,19 +53,19 @@ function NavBar() {
               name={link.name}
               key={link.name}
               link={link.link}
-              className="bg-blue-400 px-2"
+              className="bg-blue-400 px-3"
             />
           ))}
         </ul>
         <button
-          className={`font-body text-md  sm:hidden hover:text-black ${scrolled ? "text-terracotta" : "text-white"}`}
+          className={`font-body text-md  sm:hidden hover:text-black ${scrolled ? "text-terracotta" : "text-blue-50"}`}
           onClick={() => setIsOpen(!isOpen)}
         >
           Menu
         </button>
       </nav>
       <div
-        className={`fixed z-50 inset-0 bg-korra-green transition-transform duration-350 ${
+        className={`fixed z-1000 inset-0 bg-korra-green transition-transform duration-350 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
